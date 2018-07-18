@@ -68,11 +68,65 @@ img{
     transition: transform 0.5s;
 }
 
-img:hover{
+section img:hover{
     border: 6px solid #2b17d8;
     transform-origin: top 0 left 0;
     transform: scale(1.25);
 }
+
+.backPop{
+    top: 0;
+    left: 0;
+    height: 300vh;
+    width: 300vh;
+    position: fixed;
+    background-color: rgba(188,183,183,0.75);
+}
+
+.popup{
+    background-color: #17181b;
+    height: 52vh;
+    width: 100vh;
+    margin-left: 50vh;
+    margin-top: 20vh;
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
+
+.popup h3{
+    color: white;
+    margin-left: 2vh;
+}
+
+.popup p{
+    color: white;
+    margin-left: 40vh;
+}
+
+.popup img{
+    float: left;
+    margin-left: 2vh;
+    margin-bottom: 2vh;
+
+}
+
+.popup button{
+    background-color: #126B81;
+    border: 2px solid #126B81;
+    color: white;
+    width: 100vh;
+    clear: both;
+    border-radius: 8px;
+    font-size: 24px;
+    padding: 14px 40px;
+    cursor: pointer;
+}
+
+.popup button:active {
+    background-color: #126B81;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
+
 
 @media screen and (max-width: 350px){
     section{
