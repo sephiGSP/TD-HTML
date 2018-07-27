@@ -57,7 +57,31 @@ function movieList(movies){
         //on place la div dans la section
         sectionParent.appendChild(madiv)
         //on crée un event qui ouvre une popup lorsque l'on clique sur une affiche
-        img.addEventListener("click", createPopup)
+        img.addEventListener("click", function(){
+            //fonction de création de la popup
+            var backPop = document.createElement('div')
+            backPop.className = 'backPop'
+            var popup = document.createElement('div')
+            popup.className = 'popup'
+            const monTxt = document.createElement('h3')
+            monTxt.innerHTML = movie.title
+            popup.appendChild(monTxt)
+            const img = document.createElement('img');
+            img.src = movie.poster
+            popup.appendChild(img)
+            const desc = document.createElement('p')
+            desc.innerText = movie.desc
+            popup.appendChild(desc)
+            const close = document.createElement('button')
+            close.innerText = 'Fermer'
+            popup.appendChild(close)
+            backPop.appendChild(popup)
+            mainEl.appendChild(backPop)
+            //evenement qui ferme la popup lors du clic sur fermer
+            close.addEventListener("click", clicFermer)
+            document.addEventListener("keydown", escFermer) 
+             
+        })
     })
 }
 
@@ -84,28 +108,3 @@ function clicFermer(){
     close.removeEventListener("clic", clicFermer)
 }
 
-function createPopup(movies){
-    //fonction de création de la popup
-    var backPop = document.createElement('div')
-    backPop.className = 'backPop'
-    var popup = document.createElement('div')
-    popup.className = 'popup'
-    const monTxt = document.createElement('h3')
-    monTxt.innerHTML = movies.title
-    popup.appendChild(monTxt)
-    const img = document.createElement('img');
-    img.src = movies.poster
-    popup.appendChild(img)
-    const desc = document.createElement('p')
-    desc.innerText = movies.desc
-    popup.appendChild(desc)
-    const close = document.createElement('button')
-    close.innerText = 'Fermer'
-    popup.appendChild(close)
-    backPop.appendChild(popup)
-    mainEl.appendChild(backPop)
-    //evenement qui ferme la popup lors du clic sur fermer
-    close.addEventListener("click", clicFermer)
-    document.addEventListener("keydown", escFermer) 
-     
-}
